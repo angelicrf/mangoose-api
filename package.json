@@ -1,0 +1,30 @@
+{
+  "name": "mangoose-api",
+  "version": "1.0.0",
+  "description": "shopping list built with mern stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelicrf/mangoose-api.git"
+  },
+  "author": "Angelique Refahiyat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelicrf/mangoose-api/issues"
+  },
+  "homepage": "https://github.com/angelicrf/mangoose-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
