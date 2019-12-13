@@ -18,6 +18,6 @@ const connectDB = async () => {
 connectDB();
 app.use('/api/items', items);
 
-const port = process.env.PORT || 30025;
+const port = process.env.SERVER_PORT || 30026;
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
