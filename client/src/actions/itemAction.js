@@ -6,3 +6,17 @@ export const getItem = () =>{
 
     };
 };
+export const deleteItem = (id) =>{
+    return {
+        type: DELETE_ITEMS,
+        payload: id
+
+    };
+};
+export const addItem = (item) =>{
+    return {
+        type: ADD_ITEMS,
+        payload: item
+
+    };
+};
