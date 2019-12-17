@@ -17,6 +17,9 @@ const connectDB = async () => {
         .catch(err => console.log(err));
 };
 connectDB();
+app.get('/', function (req, res){
+    res.send('Root route')
+});
 app.use('/api/items', items);
 
 if(process.env.NODE_ENV === 'production'){
