@@ -19,15 +19,15 @@ const connectDB = async () => {
 };
 connectDB();
 app.get('/', function (req, res){
-    res.sendFile(path.join(__dirname +'/build/index.html'));
+    res.sendFile(path.join(__dirname +'/public/build/index.html'));
 });
 app.use('/api/items', items);
 console.log("the process env NODE_ENV", process.env.NODE_ENV);
 
 //if(process.env.NODE_ENV === 'production'){
-app.use(express.static('build'));
+app.use(express.static('public'));
 app.get('*', (req,res) => {
-        res.sendFile(path.join(__dirname +'/build/index.html'));
+        res.sendFile(path.join(__dirname +'/public/build/index.html'));
     });
 //}
 
