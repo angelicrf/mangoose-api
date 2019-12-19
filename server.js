@@ -18,10 +18,7 @@ const connectDB = async () => {
         .catch(err => console.log(err));
 };
 connectDB();
-app.get('/', function (req, res){
-    res.sendFile(path.resolve('client', 'build', 'index.html'));
-    res.sendFile(path.join(__dirname ,'client','build','index.html'));
-});
+app.get('/', items);
 app.use('/api/items', items);
 //console.log("the process env NODE_ENV", process.env.PORT);
 
