@@ -20,7 +20,7 @@ const connectDB = async () => {
 connectDB();
 app.get('/', function (req, res){
     res.sendFile(path.resolve('client', 'build', 'index.html'));
-    //res.sendFile(path.join(__dirname +'/client/build/index.html'));
+    res.sendFile(path.join(__dirname ,'client','build','index.html'));
 });
 app.use('/api/items', items);
 //console.log("the process env NODE_ENV", process.env.PORT);
@@ -28,8 +28,8 @@ app.use('/api/items', items);
 //if(process.env.NODE_ENV === 'production'){
 
 app.get('*', (req,res) => {
-        res.sendFile(path.resolve('client', 'build', 'index.html'));
-    //res.sendFile(path.join(__dirname +'/client/build/index.html'));
+        //res.sendFile(path.resolve('client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname ,'client','build','index.html'));
     });
 //}
 const host = '0.0.0.0';

@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm install --save react-scripts && npm run build"
   },
   "keywords": [
     "example",
@@ -34,5 +35,8 @@
     "cors": "^2.8.5",
     "nodemon": "^2.0.2",
     "prop-types": "^15.7.2"
+  },
+  "engines": {
+    "node": "12.10.0"
   }
 }
