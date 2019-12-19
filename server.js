@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const db = require('./config/keys.js').mongoURI;
 console.log("db is:",db);
 mongoose.Promise = global.Promise;
-
+app.use(express.static('client/build'));
 const connectDB = async () => {
     mongoose.connect(db, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true})
         .then(() => console.log('MongoDb is Connected..'))
@@ -19,15 +19,17 @@ const connectDB = async () => {
 };
 connectDB();
 app.get('/', function (req, res){
-    res.sendFile(path.join(__dirname +'/public/build/index.html'));
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+    //res.sendFile(path.join(__dirname +'/client/build/index.html'));
 });
 app.use('/api/items', items);
 console.log("the process env NODE_ENV", process.env.NODE_ENV);
 
 //if(process.env.NODE_ENV === 'production'){
-app.use(express.static('public'));
+
 app.get('*', (req,res) => {
-        res.sendFile(path.join(__dirname +'/public/build/index.html'));
+        res.sendFile(path.resolve('client', 'build', 'index.html'));
+    //res.sendFile(path.join(__dirname +'/client/build/index.html'));
     });
 //}
 
