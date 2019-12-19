@@ -25,12 +25,13 @@ app.use('/api/items', items);
 //if(process.env.NODE_ENV === 'production'){
 
 app.get('*', (req,res) => {
-        //res.sendFile(path.resolve('client', 'build', 'index.html'));
-    res.sendFile(path.join(__dirname ,'client','build','index.html'));
+        res.sendFile(path.resolve('client', 'build', 'index.html'));
+   // res.sendFile(path.join(__dirname ,'client','build','index.html'));
     });
 //}
-const host = '0.0.0.0';
-const port = process.env.SERVER_PORT || 5000;
+process.env.NODE_HOST = '0.0.0.0';
+const host = process.env.NODE_HOST;
+const port = process.env.PORT || 5000;
 //console.log("the process env port", process.env.PORT);
 //console.log("the process env SERVER_PORT", process.env.SERVER_PORT);
 app.listen(port,host, () => console.log(`Server is running on port: ${port}`));
