@@ -23,7 +23,7 @@ app.get('/', function (req, res){
     //res.sendFile(path.join(__dirname +'/client/build/index.html'));
 });
 app.use('/api/items', items);
-console.log("the process env NODE_ENV", process.env.port);
+//console.log("the process env NODE_ENV", process.env.PORT);
 
 //if(process.env.NODE_ENV === 'production'){
 
@@ -32,8 +32,8 @@ app.get('*', (req,res) => {
     //res.sendFile(path.join(__dirname +'/client/build/index.html'));
     });
 //}
-
-const port = process.env.SERVER_PORT || 30026;
+const host = '0.0.0.0';
+const port = process.env.SERVER_PORT || 5000;
 //console.log("the process env port", process.env.PORT);
 //console.log("the process env SERVER_PORT", process.env.SERVER_PORT);
-app.listen(port, () => console.log(`Server is running on port: ${port}`));
+app.listen(port,host, () => console.log(`Server is running on port: ${port}`));
